@@ -22,11 +22,11 @@ private:
     itemType s1,s2,s3;
 public:
     Triangle(){
-        s1=1;
-        s2=1;
-        s3=1;
+        s1=(itemType)1;
+        s2=(itemType)1;
+        s3=(itemType)1;
     }
-    Triangle(itemType a,itemType b,itemType c){
+    Triangle(const itemType &a,const itemType &b,const itemType &c){
         s1=a;
         s2=b;
         s3=c;
@@ -43,9 +43,10 @@ public:
      * @return A vector containing the values of the sides. */
     virtual std::vector<itemType> getSides()const{
         vector<itemType> sides;
-        sides[0]=s1;
-        sides[1]=s2;
-        sides[2]=s3;
+        sides.reserve(3);
+        sides.push_back(s1);
+        sides.push_back(s2);
+        sides.push_back(s3);
         return sides;
     }
 
