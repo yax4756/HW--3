@@ -5,7 +5,6 @@
 #include "gtest/gtest.h"
 #include "triangle.h"
 #include <math.h>
-//#include <cmath>
 
 int points = 100;
 
@@ -86,11 +85,11 @@ TEST(hw3Test, simpleAreaTest) {
 TEST(hw3Test, generalizedAreaTest) {
 
     Triangle<float> t1(4.5, 5.5, 6.5);
-    EXPECT_EQ((double) trunc(1000 * t1.getArea()) / 1000, (double) trunc(1000 * 12.2019) / 1000)
+    EXPECT_EQ((double) std::trunc(1000 * t1.getArea()) / 1000, (double) std::trunc(1000 * 12.2019) / 1000)
                         << "Area is not correct";
 
     Triangle<double> t2(4.5, 5.5, 6.5);
-    EXPECT_EQ((double) trunc(1000 * t2.getArea()) / 1000, (double) trunc(1000 * 12.2019) / 1000)
+    EXPECT_EQ((double) std::trunc(1000 * t2.getArea()) / 1000, (double) std::trunc(1000 * 12.2019) / 1000)
                         << "Area is not correct";
 
     if (HasFailure()) { points -= 10; }
